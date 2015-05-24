@@ -10,6 +10,10 @@
 
 <div class="div-principal">
 
+	<div class="div-overlay">
+		<h1>Just click!</h1>
+	</div>
+
 	<div class="divs-container"></div>
 
 	<audio id="som1">
@@ -56,6 +60,12 @@ $(document).ready(function(){
 	var running = false;
 	$(window).on('click', function(){
 
+		$('.div-overlay').velocity({
+			opacity: 0
+		}, {
+			duration : 100
+		});
+
 		if(!running){
 
 			running = !running;
@@ -74,6 +84,8 @@ $(document).ready(function(){
 				
 				$(this).velocity({
 					rotateX : '+='+Math.random()*180,
+					rotateY : '+='+Math.random()*180,
+					rotateZ : '+='+Math.random()*180,
 					translateX : '-='+Math.random()*200,
 					translateY : '-='+Math.random()*200,
 					translateZ : '-='+Math.random()*200,
@@ -112,6 +124,8 @@ $(document).ready(function(){
 
 				$(this).velocity({
 					rotateX : 0,
+					rotateY : 0,
+					rotateZ : 0,
 					translateX : 0,
 					translateY : 0,
 					translateZ : 0,
@@ -129,6 +143,17 @@ $(document).ready(function(){
 	})
 
 });
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63358117-1', 'auto');
+  ga('send', 'pageview');
 
 </script>
 
